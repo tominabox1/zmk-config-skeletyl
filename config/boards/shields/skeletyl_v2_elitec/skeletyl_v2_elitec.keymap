@@ -108,6 +108,26 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
+		copy_win: copy_win {
+            label = "copy_win";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+		undo_mac: undo_mac {
+            label = "undo_mac";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp Z>
+                , <&macro_release &kp LGUI>
+                ;
+        };
     };
 };
 
@@ -177,9 +197,9 @@
 
     nav {
             bindings = <
-    &bt BT_SEL_CMD 0 &bt BT_SEL_CMD 1 &bt BT_SEL_CMD 2 &bt BT_SEL_CMD 3 &none &none &kp PG_UP &kp UP &none &kp BSPC
+    &bt BT_SEL_CMD 0 &bt BT_SEL_CMD 1 &bt BT_SEL_CMD 2 &bt BT_SEL_CMD 3 &none &none &kp PG_UP &kp UP &none &bt BT_CLR
     &trans &trans &trans &trans &none &kp HOME &kp LEFT &kp DOWN &kp RIGHT &kp END
-    &none &none &none &none &mic_mute &mic_mute &none &kp GRAVE &kp BSLH &kp FSLH
+    &undo_mac &none &copy_win &none &mic_mute &mic_mute &none &kp GRAVE &kp BSLH &kp FSLH
     &win_left &trans &win_right &win_left &trans &win_right
             >;
         };
