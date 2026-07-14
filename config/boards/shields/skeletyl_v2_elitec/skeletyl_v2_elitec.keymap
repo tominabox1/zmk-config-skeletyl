@@ -21,7 +21,7 @@
 			#binding-cells = <2>;
 			tapping_term_ms = <200>;
             flavor = "balanced";
-			bindings = <&reset>, <&bootloader>;
+			bindings = <&sys_reset>, <&bootloader>;
         };
 
         bh: layer_taps 
